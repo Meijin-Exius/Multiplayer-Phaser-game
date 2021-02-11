@@ -1,1 +1,1 @@
-document.body.textContent = 'Hi, I am being served correctly';
+document.body.textContent = 'You are already dead, as I am working';
