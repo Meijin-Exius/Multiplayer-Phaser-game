@@ -32,12 +32,6 @@ public update(): void {
     super.gameUpdate(this.game);
 }
 
-export interface LifeCycle {
-    preload(): void;
-    create(): void;
-    update(): void;
-}
-
 import { Game } from "../game/game.class";
 import { LifeCycle } from "./lifecycle";
 
@@ -54,12 +48,20 @@ export class PhaserSpaceGame extends Game implements LifeCycle {
     }
         
     public preload(): void {
-        const game = this.game.load:
+        const game = this.game.load;
         game.crossOrigin = 'anonymous';
         game.image('space', 'assets/background.jpeg');
         game.image('laser', 'assets/bullet.png');
-        game.spritesheet('dust', 'assets/dust.png', 64, 64, 16):
+        game.spritesheet('dust', 'assets/dust.png', 64, 64, 16);
         game.spritesheet('kaboom', 'assets/explosions.png', 64, 64, 16);
+        game.image('pickup', 'assets/pickup.png');
+        game.spritesheet('shooter-sprite', 'assets/ship.png', 32, 32);
     }
-
+    public create(): void {
+        super.properties(this.game);
+        super.manageAssets(this.game);
+    }
+    public update(): void {
+        super.gameUpdate(this.game);
+    }
 }

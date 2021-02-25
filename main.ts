@@ -1,1 +1,1 @@
-document.body.textContent = 'You are already dead, as I am working';
+document.body.textContent = 'I am working, do not disturb';
