@@ -40,3 +40,12 @@ public createPlayer(gameInstance): void {
     this.player.anchor.setTo(0.5, 0.5);
     this.attachPhysics(gameInstance);
 }
+private attachPhysics(gameInstance): void {
+    gameInstance.physics.enable(this.player, Phaser.Physics.ARCADE);
+    this.player.body.collideWorldBounds = true;
+    this.player.body.bounce.setTo(10, 10);
+    this.player.body.gravity.y = 0;
+    this.player.body.drag.set(80);
+    this.player.body.maxVelocity.set(100);
+    this.player.body.immovable = false;
+}
